@@ -18,33 +18,38 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-const BoxModelDemo = () => ( 
-  <View style={styles.main}> 
-    <Text style={styles.content}>Column 1</Text> 
-    <Text style={styles.content}>Column 2</Text> 
-    <Text style={styles.content}>Column 3</Text> 
-  </View> 
-); 
- 
-const styles = StyleSheet.create({ 
-  main: { 
-    flex: 1, 
-    paddingVertical: 20, 
-    flexDirection: 'row', 
-    flexWrap: 'wrap' 
-  }, 
-  content: { 
-    padding: 20, 
-    marginHorizontal: 5,
-    backgroundColor: '#ef4c', 
-    width: 125, 
-    height: 125, 
-    borderWidth: 1, 
-    borderColor: 'red', 
-    textAlign: 'center' 
-  } 
-}); 
+const BoxModelDemo = () => (
+  <View style={styles.main}>
+    <Text style={styles.content}>Column 1</Text>
+    <Text style={styles.content}>Column 2</Text>
+    <Text style={styles.content}>Column 3</Text>
+  </View>
+);
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
+  },
+  item: {
+    backgroundColor: 'lightgoldenrodyellow',
+    borderWidth: 1,
+    borderColor: 'goldenrod',
+    height: 150,
+    width: 150
+  }
+});
+
+
+const FlexBoxLayout = () => (
+  <View style={styles.container}>
+    <View style={styles.item} />
+    <View style={styles.item} />
+    <View style={styles.item} />
+  </View>
+);
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -61,6 +66,7 @@ export default class App extends Component<Props> {
           {instructions}
         </Text>
         <BoxModelDemo></BoxModelDemo>
+        <FlexBoxLayout></FlexBoxLayout>
       </View>
     );
   }
