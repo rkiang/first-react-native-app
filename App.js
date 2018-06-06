@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start'
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   item: {
     backgroundColor: 'lightgoldenrodyellow',
